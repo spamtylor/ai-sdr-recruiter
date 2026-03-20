@@ -1,4 +1,24 @@
+"use client"
+
+import { useState } from "react"
+
 export default function Home() {
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    
+    setLoading(true)
+    // In production, this would send to your API/DB
+    // For now, just simulate success
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    setSubmitted(true)
+    setLoading(false)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
@@ -15,9 +35,12 @@ export default function Home() {
             <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a>
             <a href="#contact" className="text-slate-300 hover:text-white transition-colors">Contact</a>
           </nav>
-          <button className="border border-slate-600 text-slate-300 px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">
+          <a 
+            href="#contact"
+            className="border border-slate-600 text-slate-300 px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition-colors"
+          >
             Get Started
-          </button>
+          </a>
         </div>
       </header>
 
@@ -36,12 +59,18 @@ export default function Home() {
             Replace expensive recruiting agencies with AI that autonomously sources, screens, and engages top SDR talent.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+            <a 
+              href="#contact"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+            >
               Start Free Trial
-            </button>
-            <button className="text-slate-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
-              Watch Demo
-            </button>
+            </a>
+            <a 
+              href="#features"
+              className="text-slate-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+            >
+              See How It Works
+            </a>
           </div>
           <p className="text-slate-500 text-sm mt-4">No credit card required • 14-day free trial</p>
         </div>
@@ -50,9 +79,9 @@ export default function Home() {
       {/* Features */}
       <section id="features" className="py-20 bg-slate-800/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white text-center mb-4">Why startups choose us</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-4">How it works</h2>
           <p className="text-slate-400 text-center mb-12 max-w-xl mx-auto">
-            Recruiting agencies charge 15-25% of annual salary. We do it better, faster, and cheaper.
+            Three steps to better SDR hires
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
@@ -61,9 +90,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">AI Sourcing</h3>
+              <h3 className="text-white font-semibold text-lg mb-2">1. Tell us what you need</h3>
               <p className="text-slate-400">
-                Our AI scans thousands of profiles to find perfect SDR matches.
+                Share your ideal SDR profile — experience, skills, compensation range.
               </p>
             </div>
             <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
@@ -72,9 +101,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">Smart Screening</h3>
+              <h3 className="text-white font-semibold text-lg mb-2">2. AI finds & screens candidates</h3>
               <p className="text-slate-400">
-                Automated resume parsing and qualification questions.
+                Our AI sources from LinkedIn, GitHub, and 50+ platforms — then screens them.
               </p>
             </div>
             <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
@@ -83,9 +112,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">Auto Outreach</h3>
+              <h3 className="text-white font-semibold text-lg mb-2">3. Review & hire</h3>
               <p className="text-slate-400">
-                Personalized email sequences that get responses.
+                Get a shortlist of qualified candidates with AI-generated interview questions.
               </p>
             </div>
           </div>
@@ -119,9 +148,12 @@ export default function Home() {
                   <span className="text-green-400">✓</span> Candidate dashboard
                 </li>
               </ul>
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors">
+              <a 
+                href="#contact"
+                className="block w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors text-center"
+              >
                 Get Started
-              </button>
+              </a>
             </div>
             <div className="bg-gradient-to-b from-blue-900/50 to-slate-800/50 border border-blue-500/30 rounded-xl p-6">
               <div className="flex items-center justify-between mb-1">
@@ -147,24 +179,55 @@ export default function Home() {
                   <span className="text-green-400">✓</span> Priority support
                 </li>
               </ul>
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors">
+              <a 
+                href="#contact"
+                className="block w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors text-center"
+              >
                 Get Started
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Contact / Signup */}
       <section id="contact" className="py-20 bg-blue-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to hire better SDRs?</h2>
           <p className="text-blue-100 mb-8 max-w-xl mx-auto">
             Join startups who are hiring SDRs in days, not months—and saving thousands per hire.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium transition-colors">
-            Start Free Trial
-          </button>
+          
+          {submitted ? (
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-md mx-auto">
+              <svg className="w-16 h-16 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-white font-semibold text-xl mb-2">You're on the list!</h3>
+              <p className="text-blue-100">We'll be in touch soon with your free trial access.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your work email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/30"
+                />
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
+                >
+                  {loading ? "Joining..." : "Start Free"}
+                </button>
+              </div>
+              <p className="text-blue-200 text-sm mt-3">No credit card required • 14-day free trial</p>
+            </form>
+          )}
         </div>
       </section>
 

@@ -2,8 +2,9 @@
 
 ## Product Info
 - **Name:** AI SDR Recruiter
-- **Status:** SPAWNED (Tier A)
+- **Status:** APPROVED FOR BUILD
 - **Decision Date:** 2026-03-20
+- **Approved by:** Tyler (Flume Cofounder)
 
 ## Thesis
 **One-liner:** Replace expensive recruiting agencies with AI that screens and sources SDRs autonomously.
@@ -32,11 +33,11 @@
 - **Months to $1k MRR:** 3
 - **Risk Score:** 0.25
 
-## Next Steps
-1. MVP landing page
+## Build Plan
+1. MVP landing page (Next.js + Tailwind)
 2. Stripe test link
 3. Core features: resume parsing, screening questions, outreach email generation
 
 ## Notes
 - First autonomous spawn from GENESIS_PROTOCOL
-- Using Titan Ollama for research
+- Approved 2026-03-20

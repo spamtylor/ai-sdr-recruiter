@@ -1,0 +1,179 @@
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Header */}
+      <header className="border-b border-slate-700/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">AI</span>
+            </div>
+            <span className="text-white font-semibold text-xl">SDR Recruiter</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6">
+            <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
+            <a href="#pricing" className="text-slate-300 hover:text-white transition-colors">Pricing</a>
+            <a href="#contact" className="text-slate-300 hover:text-white transition-colors">Contact</a>
+          </nav>
+          <button className="border border-slate-600 text-slate-300 px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition-colors">
+            Get Started
+          </button>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="py-20 md:py-32">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span className="text-blue-300 text-sm">Now in Beta</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Hire SDRs for 10% of<br />
+            <span className="text-blue-400">the agency cost</span>
+          </h1>
+          <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
+            Replace expensive recruiting agencies with AI that autonomously sources, screens, and engages top SDR talent.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              Start Free Trial
+            </button>
+            <button className="text-slate-300 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+              Watch Demo
+            </button>
+          </div>
+          <p className="text-slate-500 text-sm mt-4">No credit card required • 14-day free trial</p>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="py-20 bg-slate-800/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">Why startups choose us</h2>
+          <p className="text-slate-400 text-center mb-12 max-w-xl mx-auto">
+            Recruiting agencies charge 15-25% of annual salary. We do it better, faster, and cheaper.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2">AI Sourcing</h3>
+              <p className="text-slate-400">
+                Our AI scans thousands of profiles to find perfect SDR matches.
+              </p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2">Smart Screening</h3>
+              <p className="text-slate-400">
+                Automated resume parsing and qualification questions.
+              </p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold text-lg mb-2">Auto Outreach</h3>
+              <p className="text-slate-400">
+                Personalized email sequences that get responses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">Simple pricing</h2>
+          <p className="text-slate-400 text-center mb-12">Pay a fraction of what agencies charge</p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6">
+              <h3 className="text-white font-semibold text-xl mb-1">Starter</h3>
+              <p className="text-slate-400 text-sm mb-4">For small teams</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">$99</span>
+                <span className="text-slate-400">/month</span>
+              </div>
+              <ul className="space-y-3 text-slate-300 mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> 10 candidate searches/mo
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> AI screening
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Email outreach
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Candidate dashboard
+                </li>
+              </ul>
+              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors">
+                Get Started
+              </button>
+            </div>
+            <div className="bg-gradient-to-b from-blue-900/50 to-slate-800/50 border border-blue-500/30 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="text-white font-semibold text-xl">Pro</h3>
+                <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Most Popular</span>
+              </div>
+              <p className="text-slate-400 text-sm mb-4">For growing teams</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-white">$199</span>
+                <span className="text-slate-400">/month</span>
+              </div>
+              <ul className="space-y-3 text-slate-300 mb-6">
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Unlimited searches
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Everything in Starter
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Interview scheduling
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span> Priority support
+                </li>
+              </ul>
+              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="contact" className="py-20 bg-blue-600">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to hire better SDRs?</h2>
+          <p className="text-blue-100 mb-8 max-w-xl mx-auto">
+            Join startups who are hiring SDRs in days, not months—and saving thousands per hire.
+          </p>
+          <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium transition-colors">
+            Start Free Trial
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 border-t border-slate-700/50">
+        <div className="container mx-auto px-4 text-center text-slate-500">
+          <p>© 2026 AI SDR Recruiter. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
